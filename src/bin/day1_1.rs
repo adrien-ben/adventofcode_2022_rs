@@ -11,7 +11,7 @@ fn main() {
     let mut max = 0u32;
 
     reader.lines().map(|l| l.unwrap()).for_each(|cal| {
-        if cal == "" {
+        if cal.is_empty() {
             if accum > max {
                 max = accum;
             }

@@ -11,7 +11,7 @@ fn main() {
         .lines()
         .map(|l| {
             let l = l.unwrap();
-            let opponent: Shape = l.chars().nth(0).unwrap().into();
+            let opponent: Shape = l.chars().next().unwrap().into();
             let me: Shape = l.chars().nth(2).unwrap().into();
 
             me.get_score(opponent)

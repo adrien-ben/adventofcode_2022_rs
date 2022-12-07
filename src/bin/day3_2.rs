@@ -30,7 +30,7 @@ fn main() {
         let badge = elf3.chars().find(|c| comp2.contains(c)).unwrap();
         let badge_code = badge as u32;
 
-        if badge_code >= 65 && badge_code < 97 {
+        if (64..97).contains(&badge_code) {
             total += badge_code - 38 // map A-Z to 27-52
         } else {
             total += badge_code - 96 // map a-z to 1-26

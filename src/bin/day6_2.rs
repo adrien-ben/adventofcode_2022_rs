@@ -35,10 +35,9 @@ fn all_different(buffer: &[char]) -> bool {
 }
 
 fn _all_different_with_iter(buffer: &[char]) -> bool {
-    buffer
+    !buffer
         .iter()
         .enumerate()
         .flat_map(|(i, c1)| buffer.iter().skip(i + 1).map(|c2| (*c1, *c2)))
-        .find(|(c1, c2)| c1 == c2)
-        .is_none()
+        .any(|(c1, c2)| c1 == c2)
 }

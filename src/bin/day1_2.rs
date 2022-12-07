@@ -11,7 +11,7 @@ fn main() {
     let mut totals = vec![];
 
     reader.lines().map(|l| l.unwrap()).for_each(|cal| {
-        if cal == "" {
+        if cal.is_empty() {
             totals.push(accum);
             accum = 0;
         } else {

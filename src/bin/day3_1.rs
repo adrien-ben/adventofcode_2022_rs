@@ -23,7 +23,7 @@ fn main() {
                 .unwrap();
             let error_code = error as u32;
 
-            if error_code >= 65 && error_code < 97 {
+            if (64..97).contains(&error_code) {
                 error_code - 38 // map A-Z to 27-52
             } else {
                 error_code - 96 // map a-z to 1-26
